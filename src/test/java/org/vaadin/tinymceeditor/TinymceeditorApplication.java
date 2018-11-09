@@ -34,6 +34,7 @@ public class TinymceeditorApplication extends UI {
                 notification.show(Page.getCurrent());
             }
         }));
+
         tinyMCETextField = new TinyMCETextField();
         content.addComponent(tinyMCETextField);
 
@@ -54,6 +55,10 @@ public class TinymceeditorApplication extends UI {
                 notification.setDescription(tinyMCETextField2.getValue());
                 notification.show(Page.getCurrent());
             }
+        }));
+
+        content.addComponent(new Button("Hide/Show editor 2", (ClickListener) event -> {
+            tinyMCETextField2.setVisible(!tinyMCETextField2.isVisible());
         }));
 
         tinyMCETextField2 = new TinyMCETextField();
