@@ -18,7 +18,6 @@ public class TinyMCEService {
 	public static native void loadEditor(String id, OnChangeListener listener, String cc)
 	/*-{
 
-        $wnd.tinymce.remove('#' + id);
         var conf = {
 
 			selector : '#' + id ,
@@ -49,8 +48,8 @@ public class TinyMCEService {
 		 	}
 	 	} catch (e) {}
 
-
-	    $wnd.tinymce.init(conf);
+        $wnd.tinymce.remove(conf.selector);
+        $wnd.tinymce.init(conf);
 
 	}-*/
 	;
