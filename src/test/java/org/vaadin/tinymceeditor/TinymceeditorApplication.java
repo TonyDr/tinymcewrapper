@@ -66,7 +66,16 @@ public class TinymceeditorApplication extends UI {
         tinyMCETextField2.setConfig("{"
                 + "menubar: false,"
                 + "plugins: [ 'advlist autolink lists link image charmap print preview anchor','searchreplace visualblocks code fullscreen','insertdatetime media table contextmenu paste' ], "
-                + "toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'}");
+                + "toolbar: 'mybutton | insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'}");
+        tinyMCETextField2.setSetupFunction("function (editor) { " +
+                " editor.addButton('mybutton', {  " +
+                "   text: 'My button', " +
+                "   icon: false, " +
+                "   onclick: function () { " +
+                "       editor.insertContent('my button!');" +
+                "   }" +
+                "});" +
+                "}");
         content.addComponent(tinyMCETextField2);
 
         tinyMCETextField2.addValueChangeListener(event -> {

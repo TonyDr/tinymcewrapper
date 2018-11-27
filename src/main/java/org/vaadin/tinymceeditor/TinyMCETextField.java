@@ -23,6 +23,10 @@ public class TinyMCETextField extends TextField {
         getState().conf = jsConfig;
     }
 
+    public void setSetupFunction(String jsSetupFunction) {
+        getState().setupFunction = jsSetupFunction;
+    }
+
     @Override
     protected TinymceState getState() {
         return (TinymceState) super.getState();

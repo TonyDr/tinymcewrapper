@@ -14,5 +14,13 @@ import com.vaadin.shared.ui.textfield.TextFieldState;
 public class TinymceState extends TextFieldState {
     
     public String conf;
+
+    /**
+     * apply tinymce setup here like
+     * function(editor) {
+     *     // some stuff
+     * }
+     */
+    public String setupFunction;
     
 }

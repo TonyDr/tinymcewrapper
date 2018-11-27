@@ -41,7 +41,7 @@ public class TinyMCEConnector extends AbstractTextFieldConnector implements OnCh
             //set initial value
             this.getWidget().getElement().setInnerHTML(getState().text);
             //load the editor component
-            TinyMCEService.loadEditor(paintableId, this, getState().conf);
+            TinyMCEService.loadEditor(paintableId, this, getState().conf, getState().setupFunction);
             //mark the editor initialized
             inited = true;
         } else {
